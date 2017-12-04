@@ -1,0 +1,134 @@
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lato', sans-serif;
+    }
+
+    #curruncy-conv {
+      width: 450px;
+      height: 325px;
+      position: absolute;
+      top : -350px;
+      left : 30%;
+      animation : conv 2s forwards;
+      background-color: #1CA5B8;
+    }
+
+    @keyframes conv {
+      0% {
+        top : -350px;
+
+      }
+      50% {
+        top : 150px;
+      }
+
+      75% {
+        top : 120px;
+      }
+
+      100% {
+        top : 150px;
+        width: 600px;
+      }
+    }
+
+    #curruncy-conv h2 {
+      text-align: center;
+      padding : 10px 0;
+      color : #DAEBF2;
+    }
+
+    #converter fieldset {
+      padding: 10px 20px;
+      border : none;
+
+    }
+
+    #converter label {
+      color : #DAEBF2;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    #converter fieldset input[type="text"] {
+      padding : 5px 0;
+      text-align: center;
+      width: 60%;
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+     #converter fieldset:nth-child(-n+3) input[type="text"]{
+      float : right;
+     }
+
+     #converter fieldset:nth-child(4) input[type="text"]{
+        display: block;
+        margin: 0 auto;
+     }
+
+     #error p {
+        color : #FF404C;
+        font-size: 20px;
+        text-align: center;
+        padding : 15px 0;
+        animation : error 4s infinite;
+     }
+
+     @keyframes error {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.25);
+      }
+      100% {
+        transform: scale(1);
+      }
+     }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div id="curruncy-conv">
+    <h2>CURRENCY CONVERTER</h2>
+
+    <form id="converter">
+
+      <fieldset>
+        <label for="money1">From</label>
+          <input type="text" name="money" id="money1">
+      </fieldset>
+
+      <fieldset>
+        <label for="money2">To</label>
+          <input type="text" name="money" id="money2">
+      </fieldset>
+
+      <fieldset>
+        <label for="amount">Amount</label>
+          <input type="text" name="amount" id="amount">
+      </fieldset>
+
+      <fieldset>
+          <input type="text" name="output" placeholder="Money" id="output">
+      </fieldset>
+
+    </form>
+  
+    <div id="error"></div> 
+
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body> 
+</html>
