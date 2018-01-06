@@ -16,7 +16,9 @@ var currencyRq = new XMLHttpRequest();
 
 	};
 
-currencyRq.open("GET", "http://www.apilayer.net/api/live?access_key=6acc6d1688b7d1cff9762377d00c37b4&format=1", true);
+var clientApiKey = document.querySelector("script[data-name=api]").getAttribute("src");
+
+currencyRq.open("GET", clientApiKey, true);
 currencyRq.send();
 
 //..............................
@@ -43,7 +45,7 @@ var money1, money2, crrtMoney1, crrtMoney2, output, amount;
 		var mValue2 = currencyObj.quotes[crrtMoney2];
 
 //convert each money type to another money type
-		var finalVal = ( mValue2 / mValue1 ).toFixed(2);
+		var finalVal = ( mValue2 / mValue1 ).toFixed(4);
 
 //get amount		
 		amount = Number(this.value) * finalVal;
@@ -74,34 +76,6 @@ var money1, money2, crrtMoney1, crrtMoney2, output, amount;
 }
 
 //......................................
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
