@@ -16,7 +16,7 @@ var currencyRq = new XMLHttpRequest();
 
 	};
 
-var clientApiKey = document.querySelector("script[data-name=api]").getAttribute("src");
+var clientApiKey = document.querySelector("script[data-name=currency-api]").getAttribute("src");
 
 currencyRq.open("GET", clientApiKey, true);
 currencyRq.send();
